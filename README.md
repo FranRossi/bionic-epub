@@ -20,14 +20,47 @@ npm install
 
 ## Usage
 
-### Command Line
+You can run this tool in two different ways: through the CLI or as a web server.
+
+### CLI Mode
 
 ```bash
+# Interactive mode (recommended)
 npm start
+
+# This will prompt you to:
+# 1. Choose between Basic or Custom configuration
+# 2. Enter the path to your EPUB file
+# 3. If Custom mode is selected, configure additional options
 ```
 
+### Web Server Mode
 
-## Configuration Options
+```bash
+# Start the web server
+npm run server
+
+# The server will start at http://localhost:3000 with the following endpoints:
+# - POST /convert: Upload an EPUB file for conversion
+# - GET /health: Check server status
+```
+
+#### API Endpoints
+
+`POST /convert`
+- Upload an EPUB file using multipart/form-data
+- The file should be sent with the key 'epub'
+- Optional configuration can be sent in the request body:
+  ```json
+  {
+    "maxPrefixRatio": 0.6,
+    "minWordLength": 3,
+    "maxPrefixLength": 8,
+    "skipUpperCase": true
+  }
+  ```
+
+### Configuration Options
 
 | Option | Description | Default |
 |--------|-------------|---------|
