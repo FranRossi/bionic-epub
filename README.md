@@ -23,25 +23,9 @@ npm install
 ### Command Line
 
 ```bash
-npm start <input-epub-file>
+npm start
 ```
 
-### As a Library
-
-```typescript
-import { convertToBionic } from 'bionic-epub-converter';
-
-// Basic usage
-const outputPath = await convertToBionic('input.epub');
-
-// With options
-const outputPath = await convertToBionic('input.epub', {
-  maxPrefixRatio: 0.5,    // Bold 50% of each word
-  minWordLength: 4,       // Only process words 4+ letters long
-  maxPrefixLength: 6,     // Never bold more than 6 letters
-  skipUpperCase: true     // Skip words in ALL CAPS
-});
-```
 
 ## Configuration Options
 
@@ -54,24 +38,9 @@ const outputPath = await convertToBionic('input.epub', {
 
 ## Development
 
-1. Build the project:
+Build the project:
 ```bash
 npm run build
-```
-
-2. Run tests:
-```bash
-npm test
-```
-
-3. Format code:
-```bash
-npm run format
-```
-
-4. Lint code:
-```bash
-npm run lint
 ```
 
 ## License
